@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="book" class="com.yf.springDemo.Book"></bean>
+    <bean id="person" class="com.yf.springDemo.Person"></bean>
+    <bean id="user" class="com.yf.springDemo.User" scope="prototype"></bean>
+
+    <!--静态工厂（不需要创建工厂本身）造AirPlane类的对象-->
+    <!--factory-method:指定哪个方法是工厂方法-->
+    <!--class:指定静态工厂全类名-->
+    <bean id="airplane01" class="com.yf.factory.StaticFactory"
+          factory-method="getInstance">
+        <!--可以为方法传入参数值-->
+        <constructor-arg name="captain" value="欧根亲王"></constructor-arg>
+    </bean>
+
+    <!--实例工厂创建AirPlane类的对象-->
+    <!--创建工厂-->
+    <bean id="factory" class="com.yf.factory.InstanceFactory"></bean>
+    <!--factory-bean:指定工厂，用于创建当前对象-->
+    <bean id="airplane02" class="com.yf.factory.AirPlane"
+          factory-bean="factory" factory-method="getInstance">
+        <constructor-arg name="captain" value="企业"></constructor-arg>
+    </bean>
+
+
+    <bean id="airplane03" class="com.yf.factory.AirPlaneFactoryBean">
+    </bean>
+
+</beans>

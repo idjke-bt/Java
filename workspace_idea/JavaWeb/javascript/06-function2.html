@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>function</title>
+
+    <script type="text/javascript">
+        //js中不允许重载
+        function fun(){
+            alert("hello world");
+        }
+
+        function fun(a,b){
+            alert(arguments.length);
+            for(var i=0; i<arguments.length; i++){
+                alert(arguments[i]);
+            }
+        }
+
+        function sum(){
+            var sum=0;
+            for(var i=0; i<arguments.length; i++){
+                sum = sum + arguments[i];
+            }
+            alert(sum);
+        }
+
+        // fun(1,2,3,"abc");
+        sum(1,2,3,4,5);
+        sum(1,2,3,4,"aaa",5);
+
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

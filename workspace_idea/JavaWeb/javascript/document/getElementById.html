@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script type="text/javascript">
+        /**
+         * 需求：
+         * 当点击了校验按钮后，获取输出框的内容，并验证是否合法
+         * 验证的规则：必须由字母、数字、下划线组成。并且长度是5-12位
+         */
+        window.onload = function () {
+            var element = document.getElementById("butt");
+            element.onclick = function () {
+                var username = document.getElementById(`username`);
+                // alert(username); [object HTMLInputElement] 它就是DOM对象
+                var value = username.value;
+                //用正则表达式验证该字符串是否满足要求
+                var pattern = /^\w{5,12}$/;
+                var spanEle = document.getElementById("spanEle");
+                if(pattern.test(value)){
+                    spanEle.innerHTML="合法";
+                }else {
+                    spanEle.innerHTML="必须由数字、字母、下划线构成！";
+                }
+            }
+        }
+    </script>
+
+</head>
+
+
+<body>
+   用户名：<input type="text" id="username">
+   <span style="color: red" id="spanEle"></span>
+   <br>
+   <button id="butt">验证</button>
+
+</body>
+</html>

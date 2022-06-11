@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="user1" class="com.yf.springDemo.User">
+        <property name="times" value="11"></property>
+    </bean>
+    <bean id="book2" class="com.yf.springDemo.Book">
+        <property name="name" value="三国演义"></property>
+        <property name="author" value="罗贯中"></property>
+
+    </bean>
+
+    <!--正确为各种属性赋值-->
+    <bean id="person01" class="com.yf.springDemo.Person">
+        <!--赋予null值-->
+        <property name="gender">
+            <!--在property内部进行复杂赋值-->
+            <null></null>
+        </property>
+
+        <!-- 方式一-->
+        <!-- ref:代表引用外面的一个对象：user=ioc.getBean("user1", User.class)-->
+        <!--        <property name="user" ref="user1">-->
+        <!--        </property>-->
+
+
+        <!--方式二：通过bean标签创建，再赋值。相当于：user=new User();-->
+        <property name="user">
+            <bean id="use2" class="com.yf.springDemo.User">
+                <property name="times" value="55"></property>
+            </bean>
+        </property>
+
+
+        <!--如何向list类型赋值-->
+        <property name="books">
+            <!--相当于：books = new ArrayList<Book>();-->
+            <list>
+                <!--向list中添加元素-->
+                <bean id="book1" class="com.yf.springDemo.Book">
+                    <property name="name" value="西游记"></property>
+                    <property name="author" value="吴承恩"></property>
+                </bean>
+
+                <!--也可以使用ref-->
+                <ref bean="book2"></ref>
+            </list>
+        </property>
+
+        <!--为Map类型赋值-->
+        <property name="map">
+            <!--maps = new LinkedHashMap-->
+            <map>
+                <!--一个entry代表一个键值对-->
+                <entry key="key1" value="boring"></entry>
+                <entry key="key2" value="lunch"></entry>
+                <entry key="key3" value-ref="book2"></entry>
+                <entry key="key4">
+                    <bean class="com.yf.springDemo.User">
+                        <property name="times" value="22"></property>
+                    </bean>
+                </entry>
+            </map>
+        </property>
+
+        <!--为Properties类型赋值-->
+        <property name="pros">
+            <!--pros = new Properties()  所有的key,value都是String类型-->
+            <props>
+                <!--key value都是String类型，value直接写在标签体中即可-->
+                <prop key="username">root</prop>
+                <prop key="password">idjke</prop>
+            </props>
+        </property>
+
+    </bean>
+
+    <bean id="person02" class="com.yf.springDemo.Person">
+
+        <property name="user">
+            <bean class="com.yf.springDemo.User">
+                <property name="times" value="99"></property>
+            </bean>
+        </property>
+
+        <!--为级联属性（属性的属性，如：Person有一个User类的属性，User中有一个int型属性）赋值-->
+        <property name="user.times" value="10"></property>
+    </bean>
+
+    <bean id="person03" class="com.yf.springDemo.Person" abstract="true">
+        <property name="age" value="12"></property>
+        <property name="name" value="allen"></property>
+        <property name="gender" value="man"></property>
+    </bean>
+
+    <!--parent:指定当前bean的配置信息继承于哪个bean-->
+    <bean id="person04" class="com.yf.springDemo.Person" parent="person03">
+        <property name="name" value="bella"></property>
+    </bean>
+
+    <bean id="book" class="com.yf.springDemo.Book" scope="singleton"></bean>
+</beans>

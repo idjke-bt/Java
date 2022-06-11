@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context-4.0.xsd
+                           http://www.springframework.org/schema/aop
+                           http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+
+
+    <!--基于xml配置AOP-->
+    <!--将目标类、切面类加入到IOC容器中-->
+    <bean id="logUtils" class="com.yf.xml.LogUtils"></bean>
+    <bean id="mathCalculator" class="com.yf.xml.MathCalculator"></bean>
+    <bean id="validateAspect" class="com.yf.xml.ValidateAspect"></bean>
+
+    <aop:config>
+        <!--指定切面类1-->
+        <aop:aspect ref="logUtils">
+            <aop:pointcut id="myPointCut" expression="execution(public int com.yf.xml.*.*(int, int ))"/>
+            <aop:after-returning method="logReturn" pointcut-ref="myPointCut" returning="result"></aop:after-returning>
+            <aop:after-throwing method="logException" pointcut-ref="myPointCut" throwing="e"></aop:after-throwing>
+            <aop:around method="myAround" pointcut-ref="myPointCut"></aop:around>
+        </aop:aspect>
+
+        <!--指定切面类2-->
+        <aop:aspect ref="validateAspect">
+            <aop:pointcut id="myPointCut" expression="execution(public int com.yf.xml.MathCalculator.*(int ,int))"/>
+            <!--指定哪个方法是前置通知，以及切人点表达式-->
+            <aop:before method="validStart" pointcut="execution(public int com.yf.xml.MathCalculator.*(int, int))"></aop:before>
+            <aop:after method="validEnd" pointcut-ref="myPointCut"></aop:after>
+        </aop:aspect>
+    </aop:config>
+</beans>

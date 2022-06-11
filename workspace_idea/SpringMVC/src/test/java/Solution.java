@@ -1,0 +1,9 @@
+/**
+ * @author YangFeng
+ * @create 2022-06-08 18:52
+ */
+public class Solution {
+    public boolean isBoomerang(int[][] points) {
+        return (points[2][1]-points[1][1])*(points[1][0]-points[0][0])==(points[1][1]-points[0][1])*(points[2][0]-points[1][0]);
+    }
+}

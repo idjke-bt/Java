@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>function</title>
+
+    <script type="text/javascript">
+        //定义函数
+        //空参函数
+        function fun(){
+            alert("hello world");
+        }
+
+        //非空参函数
+        function fun2(a,b){
+            alert("a="+a+", b="+b);
+        }
+
+        //有返回值的函数
+        function fun3(a,b){
+            return a+b;
+        }
+
+        //第二种定义方式
+        var fun4 = function (a,b){
+            alert("a="+a+", b="+b);
+        }
+
+        //调用函数
+        // fun();
+        // fun2(1,2);
+        var i = fun3(1,2);
+        alert(i);
+
+        fun4(2,4);
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

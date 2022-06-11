@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单提交细节</title>
+</head>
+<body>
+    <form action="https://www.bilibili.com/" method="post">
+        <h2>用户注册</h2>
+        <table>
+            <tr>
+                <td>用户名：</td>
+                <td><input type="text" name="usrname"></td>
+            </tr>
+            <tr>
+                <td>密码：</td>
+                <td><input type="password"></td>
+            </tr>
+            <tr>
+                <td>确认密码：</td>
+                <td><input type="password"></td>
+            </tr>
+            <tr>
+                <td>性别：</td>
+                <td>
+                    <input type="radio" name="sex" value="man">男
+
+                    <input type="radio" name="sex" value="woman">女
+                </td>
+            </tr>
+            <tr>
+                <td>国籍：</td>
+                <td>
+                    <select name="country">
+                        <option value="China">中国</option>
+                        <option value="America">美国</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>自我评价：</td>
+                <td>
+                    <textarea rows="20" cols="100">ssss</textarea>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <input type="submit">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

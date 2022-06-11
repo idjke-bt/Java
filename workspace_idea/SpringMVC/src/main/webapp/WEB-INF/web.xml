@@ -1,0 +1,32 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+
+  <!--SpringMVC思想是有一个前端控制器拦截所有请求，并且智能派发-->
+  <!--这个前端控制器是一个Servlet，应再web.xml中配置整个servlet来拦截所有的请求-->
+  <servlet>
+    <servlet-name>dispatcherServlet</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <init-param>
+      <!--contextConfigLocation:指定SpringMVC配置文件的位置-->
+      <param-name>contextConfigLocation</param-name>
+      <param-value>classpath:dispatcherServlet.xml</param-value>
+    </init-param>
+    <!--servlet原本是再第一次访问时创建对象，有了下面这行代码后，变为随着服务器的启动创建对象-->
+    <!--load-on-startup: 服务器启动时创建对象，值越小优先级越高-->
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>dispatcherServlet</servlet-name>
+    <!--
+      /*和/都是拦截所有请求（前端控制器要求），但/*的范围更大
+      /* 会拦截*.jsp这些请求，这些请求一旦拦截，jsp页面就不能显示了
+      / 会拦截所有请求，但不会拦截*.jsp这些请求，能保证jsp访问正常
+    -->
+    <url-pattern>/</url-pattern>
+  </servlet-mapping>
+
+</web-app>

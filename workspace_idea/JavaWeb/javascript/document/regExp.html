@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RegExp</title>
+    <script>
+        // var pattern = new RegExp('e');
+        var pattern = /^a{3,5}$/;  //a{3,5}即是开头，又是结尾：整个字符串由3-5个a组成
+        var str = "aaaa1aaaaa2e3daaaa";
+        alert(pattern.test(str));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

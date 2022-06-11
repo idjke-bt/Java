@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>onclick</title>
+
+    <script type="text/javascript">
+
+        //动态注册onclick事件
+        window.onload = function (){
+            //1.获取标签对象
+            /**
+             * document 是JavaScript语言提供的一个对象（文档）
+             * getElementById:通过id获取标签
+             */
+            var btn = document.getElementById("1");
+
+            //2.通过标签对象.事件名 = function(){}
+            btn.onclick=function (){
+                alert("恭喜");
+            }
+        }
+    </script>
+
+</head>
+<body>
+    <button onclick="alert('1')">静态click</button>
+    <button id="1">动态click</button>
+</body>
+</html>

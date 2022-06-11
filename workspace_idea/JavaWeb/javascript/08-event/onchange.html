@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>onchange</title>
+
+    <script type="text/javascript">
+        function onchangeFun() {
+            console.log("静态onchange");
+        }
+
+        window.onload = function (){
+            var element = document.getElementById('sex');
+            element.onchange = function () {
+                console.log("动态onchange");
+            }
+        }
+    </script>
+
+</head>
+<body>
+    选择国籍：
+    <select onchange="onchangeFun()">
+        <option>china</option>
+        <option>american</option>
+    </select>
+
+    <br>
+
+    选择性别：
+    <select id="sex">
+        <option>boy</option>
+        <option>girl</option>
+    </select>
+
+</body>
+</html>

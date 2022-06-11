@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script type="text/javascript">
+        window.onload = function () {
+            var divElement = document.createElement("div");//在内存中<div></div>
+            // alert(divElement);
+            divElement.innerHTML = "hello world"; //仍然在内存中，不会显示
+
+            //将创建的div标签添加到body中
+            document.body.appendChild(divElement);
+        }
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

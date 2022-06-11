@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Alogritms_4th_Edition.iml" filepath="$PROJECT_DIR$/Alogritms_4th_Edition.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ch1_Fundamentals/Ch1_Fundamentals.iml" filepath="$PROJECT_DIR$/Ch1_Fundamentals/Ch1_Fundamentals.iml" />
+      <module fileurl="file://$PROJECT_DIR$/forTest/forTest.iml" filepath="$PROJECT_DIR$/forTest/forTest.iml" />
+    </modules>
+  </component>
+</project>

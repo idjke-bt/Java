@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Ch1-Thread/Ch1-Thread.iml" filepath="$PROJECT_DIR$/Ch1-Thread/Ch1-Thread.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ch2-UsefulClass/Ch2-UsefulClass.iml" filepath="$PROJECT_DIR$/Ch2-UsefulClass/Ch2-UsefulClass.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ch3-Enum/Ch3-Enum.iml" filepath="$PROJECT_DIR$/Ch3-Enum/Ch3-Enum.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ch4-Collection/Ch4-Collection.iml" filepath="$PROJECT_DIR$/Ch4-Collection/Ch4-Collection.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ch5-Generic/Ch5-Generic.iml" filepath="$PROJECT_DIR$/Ch5-Generic/Ch5-Generic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ch6-IOStream/Ch6-IOStream.iml" filepath="$PROJECT_DIR$/Ch6-IOStream/Ch6-IOStream.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ch7-Network/Ch7-Network.iml" filepath="$PROJECT_DIR$/Ch7-Network/Ch7-Network.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ch8-Reflection/Ch8-Reflection.iml" filepath="$PROJECT_DIR$/Ch8-Reflection/Ch8-Reflection.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ch9-NewFeature/Ch9-NewFeature.iml" filepath="$PROJECT_DIR$/Ch9-NewFeature/Ch9-NewFeature.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ch1-Thread/Chapter1-Thread.iml" filepath="$PROJECT_DIR$/Ch1-Thread/Chapter1-Thread.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaSenior.iml" filepath="$PROJECT_DIR$/JavaSenior.iml" />
+      <module fileurl="file://$PROJECT_DIR$/leetcodeTest/leetcodeTest.iml" filepath="$PROJECT_DIR$/leetcodeTest/leetcodeTest.iml" />
+    </modules>
+  </component>
+</project>

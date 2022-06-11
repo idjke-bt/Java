@@ -1,0 +1,33 @@
+.class1{
+    color: red;
+    font-size: 20px;
+
+    background-color: bisque;
+    width: 200px;
+    height: 200px;
+
+    border: black 10px solid;
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+}
+
+table{
+    width: 200px;
+    height: 200px;
+
+    border: 1px blueviolet solid;
+    border-collapse: collapse;
+}
+
+td,th{
+    border: 2px blue solid;
+}
+
+ul{
+    list-style: none;
+}
